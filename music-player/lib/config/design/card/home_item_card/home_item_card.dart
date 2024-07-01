@@ -20,12 +20,13 @@ class HomeItemCard extends MyCard {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
+            height: 190,
+            width: 190,
             decoration: BoxDecoration(
               image: DecorationImage(image: NetworkImage(image)),
               borderRadius: BorderRadius.circular(4),
             ),
           ),
-
         ],
       ),
     );
