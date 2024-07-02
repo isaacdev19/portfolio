@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:music_player/config/design/card/card.dart';
+import 'package:music_player/config/design/text/my_text.dart';
 
 class HomeItemCard extends MyCard {
   const HomeItemCard({
@@ -27,6 +28,8 @@ class HomeItemCard extends MyCard {
               borderRadius: BorderRadius.circular(4),
             ),
           ),
+          Center(child: MyText.headline3(context, title)),
+          Center(child: MyText.mini(context, subtitle)),
         ],
       ),
     );

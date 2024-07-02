@@ -36,6 +36,12 @@ dependencies:
   cupertino_icons: ^1.0.6
   # Spotify
   spotify: ^0.13.7
+  # Audio player
+  just_audio: ^0.9.38
+  # DI
+  get_it: ^7.7.0
+  # State management
+  flutter_bloc: ^8.1.6
 
 dev_dependencies:
   flutter_test:
