@@ -1,8 +1,6 @@
 package com.example.rickmorty.domain.entities
 
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.json.Json
-import java.util.EventObject
 
 
 @Serializable
@@ -20,7 +18,3 @@ data class Character(
     val type: String,
     val url: String
 )
-
-fun characterFromJson(json: String): Character {
-    return Json.decodeFromString<Character>(json)
-}

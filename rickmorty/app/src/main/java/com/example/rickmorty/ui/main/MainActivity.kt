@@ -3,36 +3,49 @@ package com.example.rickmorty.ui.main
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.viewModels
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.example.rickmorty.ui.main.viewmodel.MainViewModel
-import com.example.rickmorty.ui.main.widgets.CharacterCard
-import com.example.rickmorty.ui.main.widgets.UpperPanel
+import androidx.navigation.compose.rememberNavController
+import com.example.rickmorty.ui.main.widgets.BottomNavBar
+import com.example.rickmorty.ui.navigation.AppNavigation
 import com.example.rickmorty.ui.theme.RickmortyTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    private val viewModel: MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             RickmortyTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Column {
-                        UpperPanel()
-                        CharacterCard(viewModel)
-                    }
+                    MainScreen()
                 }
             }
+        }
+    }
+}
+
+@Composable
+fun MainScreen() {
+    val navController = rememberNavController()
+    Scaffold(
+        bottomBar = { BottomNavBar(navHostController = navController) }
+    ) {padding ->
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(padding)
+        ){
+            AppNavigation(navController = navController)
         }
     }
 }
