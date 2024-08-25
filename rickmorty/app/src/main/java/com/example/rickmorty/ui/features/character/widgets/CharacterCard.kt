@@ -20,7 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import com.example.rickmorty.domain.entities.CharacterPage
+import com.example.rickmorty.domain.entities.character.CharacterPage
 
 @Composable
 fun CharacterCard(

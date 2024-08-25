@@ -12,7 +12,6 @@ import com.example.rickmorty.ui.features.character.widgets.UpperPanel
 @Composable
 fun CharacterPage(
     characterViewModel: CharacterViewModel = viewModel()
-
 ) {
     val characterUiState by characterViewModel.uiState.collectAsState()
 

@@ -1,9 +1,9 @@
 package com.example.rickmorty.domain.repository
 
-import com.example.rickmorty.domain.entities.Character
-import com.example.rickmorty.domain.entities.CharacterPage
+import com.example.rickmorty.domain.entities.character.Character
+import com.example.rickmorty.domain.entities.character.CharacterPage
 
 interface CharacterRepository {
-    suspend fun fetchCharacter(): Character
+    suspend fun fetchCharacter(id: Int): Character
     suspend fun fetchListCharacters(): CharacterPage
 }

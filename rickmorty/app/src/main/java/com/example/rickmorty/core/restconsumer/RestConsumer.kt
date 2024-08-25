@@ -1,6 +1,7 @@
 package com.example.rickmorty.core.restconsumer
 
 import com.example.rickmorty.data.datasource.CharacterRemoteDataSource
+import com.example.rickmorty.data.datasource.LocationRemoteDataSource
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -14,5 +15,9 @@ object RestConsumer {
 
     val characterRemoteDataSource: CharacterRemoteDataSource by lazy {
         retrofit.create(CharacterRemoteDataSource::class.java)
+    }
+
+    val locationRemoteDataSource: LocationRemoteDataSource by lazy {
+        retrofit.create(LocationRemoteDataSource::class.java)
     }
 }

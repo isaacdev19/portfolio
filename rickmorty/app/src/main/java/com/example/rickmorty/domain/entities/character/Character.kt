@@ -1,4 +1,4 @@
-package com.example.rickmorty.domain.entities
+package com.example.rickmorty.domain.entities.character
 
 import kotlinx.serialization.Serializable
 
